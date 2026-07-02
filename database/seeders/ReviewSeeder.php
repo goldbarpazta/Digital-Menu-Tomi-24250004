@@ -10,6 +10,9 @@ class ReviewSeeder extends Seeder
 {
     public function run(): void
     {
+        // Clear existing reviews to avoid duplicates on re-seed
+        Review::truncate();
+
         $reviewers = [
             ['nama' => 'Budi Santoso', 'komentar' => 'Makanan sangat enak, porsi pas, recomended!'],
             ['nama' => 'Siti Nurhaliza', 'komentar' => 'Pelayanan ramah, tempat nyaman, akan kembali lagi.'],

@@ -268,7 +268,7 @@ class MenuSeeder extends Seeder
             $menuData['rating'] = $rating;
             $menuData['slug'] = \Illuminate\Support\Str::slug($menuData['nama_menu']);
 
-            Menu::create($menuData);
+            Menu::updateOrCreate(['slug' => $menuData['slug']], $menuData);
         }
     }
 }

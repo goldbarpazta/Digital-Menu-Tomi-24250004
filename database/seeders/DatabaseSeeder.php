@@ -9,11 +9,23 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'name' => 'Admin Restaurant',
-            'email' => 'admin@restaurant.com',
-            'password' => bcrypt('password'),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'admin@restaurant.com'],
+            [
+                'name' => 'Administrator',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'user@restaurant.com'],
+            [
+                'name' => 'Demo User',
+                'password' => bcrypt('password'),
+                'role' => 'user',
+            ]
+        );
 
         $this->call([
             MenuSeeder::class,

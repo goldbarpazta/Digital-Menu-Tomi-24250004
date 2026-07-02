@@ -22,7 +22,7 @@ Route::get('/menu/{slug}', [FrontendMenuController::class, 'show'])->name('front
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/menus/data', [AdminMenuController::class, 'data'])->name('menus.data');
