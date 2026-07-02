@@ -1,4 +1,8 @@
+Admin Panel
+Email: admin@restaurant.com
+password: password
 
+Link Alternatif: https://drive.google.com/drive/folders/1nLWpowH-4Z0LE80K1uEgok_E90bVe1F1?usp=sharing
 
 # 🍽️ Restaurant Digital Menu
 
